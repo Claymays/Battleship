@@ -1,14 +1,26 @@
 package battleship;
 
 import java.util.Arrays;
+import java.util.Scanner;
+
 public class Main {
+    public static void placeShip(Ship ship, String x, String y) {
+    //haha
+    }
+
+    public static boolean isValidCoordinate(String x, String y) {
+      return true;
+    }
+
     static boolean hasBoats = true;
     static char[][] board = new char[10][10];
 
     public static void setTable() {
+        Scanner in = new Scanner(System.in);
         for (char[] row : board) {
             Arrays.fill(row, '~');
         }
+
         while (hasBoats) {
 
             // print the board
@@ -25,7 +37,13 @@ public class Main {
             }
 
             // Ask for coordinates for placing each ship
-            System.out.println("Enter the coordinates of ");
+            for (Ship ship : Ship.values()) {
+                System.out.println("Enter the coordinates of " + ship.getPrintName());
+                String[] coordinates = in.nextLine().split(" ");
+                if (isValidCoordinate(coordinates[0], coordinates[1])) {
+                    placeShip(ship, coordinates[0], coordinates[1]);
+                }
+            }
         }
     }
     public static void main(String[] args) {
