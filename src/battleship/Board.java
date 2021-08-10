@@ -3,10 +3,10 @@ package battleship;
 import org.jetbrains.annotations.NotNull;
 
 enum CellStatus {
-    FOG('~'),
-    SHIP('O'),
-    HIT('X'),
-    MISS('M');
+    FOG('~')
+    ,SHIP('O')
+    ,HIT('X')
+    ,MISS('M');
 
     public final char label;
 
