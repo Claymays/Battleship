@@ -1,20 +1,5 @@
 package battleship;
 
-import org.jetbrains.annotations.NotNull;
-
-enum CellStatus {
-    FOG('~')
-    ,SHIP('O')
-    ,HIT('X')
-    ,MISS('M');
-
-    public final char label;
-
-    CellStatus(char label) {
-        this.label = label;
-    }
-}
-
 class Board {
     Cell[][] board;
 
@@ -40,7 +25,7 @@ class Board {
         System.out.println(" ");
     }
 
-    public Cell getCell(@NotNull String cell) {
+    public Cell getCell(String cell) {
         int row = cell.charAt(0) - 'A';
         int col = Integer.parseInt(cell.substring(1)) - 1;
 

@@ -2,7 +2,7 @@ package battleship;
 
 class BattleShip {
 
-    private Board board = new Board();
+    public Board board = new Board();
     private GameStatus status = GameStatus.STARTED;
 
     public GameStatus getStatus() {
