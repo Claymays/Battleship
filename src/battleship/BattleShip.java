@@ -116,14 +116,14 @@ class BattleShip {
         }
     }
 
-    public boolean setShip(Cell start, Cell end) {
+    public boolean setShip(Cell start, Cell end, GameStatus status) {
         if (start.row == end.row) {
             for (int i = start.col; i <= end.col; i++) {
-                board.setCell(CellStatus.SHIP, start.row, i);
+                board.setCell(CellStatus.SHIP, start.row, i, status);
             }
         } else {
             for (int i = start.row; i <= end.row; i++) {
-                board.setCell(CellStatus.SHIP, i, start.col);
+                board.setCell(CellStatus.SHIP, i, start.col, status);
             }
         }
 
@@ -161,7 +161,7 @@ class BattleShip {
             return false;
         }
 
-        if(!setShip(start, end)) {
+        if(!setShip(start, end, status)) {
             System.out.println("Error! Try again:");
             return false;
         }
