@@ -58,7 +58,9 @@ public class Main {
                     System.out.println("Error! You entered the wrong coordinates! Try again:");
                     continue;
                 }
-                if (board2.getCell(target).status.equals(CellStatus.FOG)) {
+                if (board2.getCell(target).status.equals(CellStatus.FOG)
+                    || board2.getCell(target).status.equals(CellStatus.MISS)
+                    || board2.getCell(target).status.equals(CellStatus.HIT)) {
                     fogBoard2.board.setCell(CellStatus.MISS, row, col, GameStatus.STARTED);
                     fogBoard2.showBoard();
                     board2.setCell(CellStatus.MISS, row, col, GameStatus.STARTED);
@@ -76,19 +78,19 @@ public class Main {
                         case DESTROYER -> destroyer++;
                     }
                     if (carrier == 5) {
-                        System.out.println("You sank a ship! Specify a new target:");
+                        System.out.println("You sank a ship!");
                         carrier = 0;
                     } else if (bShip == 4) {
-                        System.out.println("You sank a ship! Specify a new target:");
+                        System.out.println("You sank a ship!");
                         bShip = 0;
                     } else if (submarine == 3) {
-                        System.out.println("You sank a ship! Specify a new target:");
+                        System.out.println("You sank a ship!");
                         submarine = 0;
                     } else if (cruiser == 3) {
-                        System.out.println("You sank a ship! Specify a new target:");
+                        System.out.println("You sank a ship!");
                         cruiser = 0;
                     } else if (destroyer == 2) {
-                        System.out.println("You sank a ship! Specify a new target:");
+                        System.out.println("You sank a ship!");
                         destroyer = 0;
                     } else {
                         System.out.println("You hit a ship!");
@@ -104,7 +106,9 @@ public class Main {
                     System.out.println("Error! You entered the wrong coordinates! Try again:");
                     continue;
                 }
-                if (board.getCell(target).status.equals(CellStatus.FOG)) {
+                if (board.getCell(target).status.equals(CellStatus.FOG)
+                    || board.getCell(target).status.equals(CellStatus.HIT)
+                    || board.getCell(target).status.equals(CellStatus.MISS)) {
                     fogBoard1.board.setCell(CellStatus.MISS, row, col, GameStatus.STARTED);
                     fogBoard1.showBoard();
                     board.setCell(CellStatus.MISS, row, col, GameStatus.STARTED);
@@ -122,19 +126,19 @@ public class Main {
                         case DESTROYER -> destroyer2++;
                     }
                     if (carrier2 == 5) {
-                        System.out.println("You sank a ship! Specify a new target:");
+                        System.out.println("You sank a ship!");
                         carrier2 = 0;
                     } else if (bShip2 == 4) {
-                        System.out.println("You sank a ship! Specify a new target:");
+                        System.out.println("You sank a ship!");
                         bShip2 = 0;
                     } else if (submarine2 == 3) {
-                        System.out.println("You sank a ship! Specify a new target:");
+                        System.out.println("You sank a ship!");
                         submarine2 = 0;
                     } else if (cruiser2 == 3) {
-                        System.out.println("You sank a ship! Specify a new target:");
+                        System.out.println("You sank a ship!");
                         cruiser2 = 0;
                     } else if (destroyer2 == 2) {
-                        System.out.println("You sank a ship! Specify a new target:");
+                        System.out.println("You sank a ship!");
                         destroyer2 = 0;
                     } else {
                         System.out.println("You hit a ship!");
